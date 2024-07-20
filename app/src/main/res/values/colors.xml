@@ -3,7 +3,15 @@
     <color name="color_default">#03b6fc</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="purple_500">#2C0A7D</color>
-    <color name="teal_200">#03FC67</color>
-    <color name="teal_700">#016F2D</color>
+    <color name="teal_200">#EF4D4D</color>
+    <color name="teal_700">#4E0808</color>
+
+    <color name="color_delete">#FF4C3B</color>
+    <color name="color_edit">#03b6fc</color>
+    <color name="color_details">#04d5c1</color>
+
+    <color name="color_todo">#ff7803</color>
+    <color name="color_doing">#03b6fc</color>
+    <color name="color_done">#04d5c1</color>
+
 </resources>

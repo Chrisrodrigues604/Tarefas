@@ -1,5 +1,72 @@
 <resources>
     <string name="app_name">Tarefas</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    Textos Genericos-->
+    <string name="text_email">E-mail</string>
+    <string name="text_password">Senha</string>
+    <string name="text_register_account">Criar Conta</string>
+    <string name="text_hint_email">email@email.com</string>
+    <string name="text_hint_password">********</string>
+    <string name="erro_generic">Ocorreu um erro inesperado, tente novamente mais tarde.</string>
+
+    <!--    Login Fragment-->
+    <string name="text_btn_login_fragment">Login</string>
+    <string name="text_recover_login_fragment">Recuperar Conta</string>
+    <string name="text_password_empty_login_fragment">Informe a sua senha.</string>
+    <string name="text_email_empty_login_fragment">Informe o seu E-mail.</string>
+    <string name="logout_button_description">Logout</string>
+
+    <!--    Register Fragment-->
+    <string name="text_password_empty_register_fragment">Informe uma senha.</string>
+    <string name="text_email_empty_register_fragment">Informe o seu E-mail.</string>
+
+    <!--    Recover Fragment-->
+    <string name="text_email_empty_recover_fragment">Informe o seu E-mail.</string>
+    <string name="text_recover_fragment">Recuperar Conta</string>
+    <string name="text_btn_recover_fragment">Enviar</string>
+    <string name="text_confirmation_send_email_recover_fragment">Pronto, se o E-mail for válido, um link para recuperação de senha será enviado para seu e-mail.</string>
+
+    <!--    Erros Firebase Authentication-->
+    <string name="account_not_registered_register_fragment">E-mail ou senha invalidos.</string>
+    <string name="invalid_email_register_fragment">Insira um e-mail válido.</string>
+    <string name="invalid_password_register_fragment">E-mail ou senha invalidos.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já esta em uso.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+
+    <!--    Status Task-->
+    <string name="status_task_todo">A Fazer</string>
+    <string name="status_task_doing">Fazendo</string>
+    <string name="status_task_done">Feitos</string>
+
+    <!--    Form task Fragment-->
+    <string name="text_title_form_task_fragment">Nova tarefa</string>
+    <string name="text_description_form_task_fragment">Descrição</string>
+    <string name="text_status_form_task_fragment">Status</string>
+    <string name="text_btn_save_task_form_task_fragment">Salvar</string>
+    <string name="text_empty_description_form_task_fragment">Informe uma descrição para a tarefa.</string>
+    <string name="text_sucesse_save_task_form_task_fragment">Tarefa salva com sucesso.</string>
+    <string name="text_update_task_form_task_fragment">Tarefa atualizada com sucesso.</string>
+    <string name="text_erro_form_task_fragment">Ocorreu um erro ao salvar a tarefa, tente novamente mais tarde.</string>
+
+    <!--    TodoFragment-->
+    <string name="text_task_list_empty_todo_fragment">Não Existem Tarefas para Fazer.</string>
+    <string name="text_task_list_empty_doing_fragment">Não Existem Tarefas sendo Feitas.</string>
+    <string name="text_task_list_empty_done_fragment">Não Existem Tarefas Finalizadas.</string>
+
+    <!--    Bottom Sheet-->
+    <string name="text_title_bottom_sheet">Atenção</string>
+    <string name="text_message_bottom_sheet">Mensagem</string>
+    <string name="text_button_bottom_sheet">Entendi</string>
+    <string name="logout">Logout</string>
+    <string name="tab">Tab</string>
+    <string name="detalhes">Detalhes</string>
+    <string name="voltar">Voltar</string>
+    <string name="pr_ximo">Próximo</string>
+    <string name="editar">Editar</string>
+    <string name="remover">Remover</string>
+    <string name="descri_o_da_tarefa">Descrição da Tarefa</string>
+    <string name="a_fazer">A Fazer</string>
+    <string name="fazendo">Fazendo</string>
+    <string name="feitas">Feitas</string>
+
 </resources>

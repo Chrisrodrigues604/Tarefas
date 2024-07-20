@@ -1,6 +1,7 @@
 package com.example.tarefas.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +11,15 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.tarefas.R
 import com.example.tarefas.databinding.FragmentLoginBinding
+import com.example.tarefas.databinding.FragmentSplashBinding
+import com.example.tarefas.helper.BaseFragment
+import com.example.tarefas.helper.FirebaseHelper
+import com.example.tarefas.helper.showBottomSheet
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
@@ -31,48 +36,56 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         auth = Firebase.auth
-
         initClicks()
     }
 
     private fun initClicks() {
 
-        binding.btnLogin.setOnClickListener{ validateData() }
+        binding.btnLogin.setOnClickListener {
+            validateData()
+        }
 
-        binding.btnRegister.setOnClickListener{
+        binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
-        binding.btnRecover.setOnClickListener{
+        binding.btnRecover.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_recoverAccountFragment)
         }
     }
 
     private fun validateData() {
-
         val email = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString().trim()
-
-        if(email.isNotEmpty()) {
+        if (email.isNotEmpty()) {
             if (password.isNotEmpty()) {
-                binding.progressbar.isVisible = true
-                loginUser(email,password)
+                hideKeyboard()
+                binding.progressBar.isVisible = true
+                loginUser(email, password)
             } else {
-                Toast.makeText(requireContext(), "informe sua senha.", Toast.LENGTH_SHORT).show()
+                showBottomSheet(
+                    message = R.string.text_password_empty_login_fragment
+                )
+
             }
-        }else{
-            Toast.makeText(requireContext(), "informe seu email.", Toast.LENGTH_SHORT).show()
+        } else {
+            showBottomSheet(
+                message = R.string.text_email_empty_login_fragment
+            )
+
         }
     }
 
-    private fun loginUser(email:String,password:String){
-        auth.signInWithEmailAndPassword (email, password)
+    private fun loginUser(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_global_homeFragment)
                 } else {
-                    binding.progressbar.isVisible = false
+                    showBottomSheet(
+                        message = FirebaseHelper.validError(task.exception?.message ?: "")
+                    )
+                    binding.progressBar.isVisible = false
                 }
             }
     }
